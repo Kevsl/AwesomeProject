@@ -2,11 +2,11 @@ import { Text, View, Image } from 'react-native'
 import { CardStyle } from '../assets/style/Card'
 import picture1 from '../assets/images/user1.jpg'
 
-export const Card = () => {
+export const Card = (props) => {
     return (
         <View style={CardStyle.card}>
-            <Image source={picture1} style={CardStyle.cardImage} />
-            <Text style={CardStyle.cardText}>Card</Text>
+            <Image source={props.image} style={CardStyle.cardImage} />
+            <Text style={CardStyle.cardText}>{props.title}</Text>
         </View>
     )
 }
