@@ -1,7 +1,8 @@
 import { Text, View, TouchableOpacity, TextInput } from 'react-native'
 import { LoginStyle } from '../assets/style/LoginStyle'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { checkEmail, checkPassword } from '../utils/regex'
+import { getData, storeData } from '../utils/localStorage'
 
 const Login = ({ navigation }) => {
     const [email, setEmail] = useState('@gmail.com')
@@ -9,11 +10,22 @@ const Login = ({ navigation }) => {
 
     function handleLogin() {
         if (checkEmail(email) === true && checkPassword(password) === true) {
-            alert('login OK')
+            storeData('isConnected', 'true').then((res) => {
+                navigation.navigate('Home')
+            })
         } else {
             alert('login rejected')
         }
     }
+
+    useEffect(() => {
+        const token = getData('isConnected').then((res) => {
+            if (res && res === 'true') {
+                navigation.navigate('Home')
+            }
+        })
+    })
+
     function goRegister() {
         navigation.navigate('Register')
     }
