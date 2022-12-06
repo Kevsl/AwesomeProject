@@ -18,7 +18,6 @@ const Home = ({ navigation }) => {
 
     useEffect(() => {
         getUsers().then((response) => {
-            console.log(response)
             setUsers(response)
         })
     }, [])

@@ -5,7 +5,6 @@ export async function getUsers() {
         .get('https://jsonplaceholder.typicode.com/users')
         .then((response) => {
             if (response.status === 200) {
-                console.log(response)
                 return response.data
             } else {
             }
