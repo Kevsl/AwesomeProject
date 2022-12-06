@@ -4,56 +4,45 @@ import {
     View,
     TouchableOpacity,
     SafeAreaView,
+    ScrollView,
 } from 'react-native'
 import { Card } from '../components/Card'
 import { HomeStyle } from '../assets/style/Home'
 import picture1 from '../assets/images/user1.jpg'
 import picture2 from '../assets/images/user2.jpg'
-
-const users = [
-    {
-        userId: 1,
-        id: 1,
-        title: 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit',
-        body: 'ullam et saepe reiciendis voluptatem adipisci',
-    },
-    {
-        userId: 1,
-        id: 2,
-        title: 'qui est esse',
-        body: 'ullam et saepe reiciendis voluptatem adipisci',
-    },
-    {
-        userId: 1,
-        id: 3,
-        title: 'ea molestias quasi exercitationem repellat qui ipsa sit aut',
-        body: 'ullam et saepe reiciendis voluptatem adipisci',
-    },
-    {
-        userId: 1,
-        id: 4,
-        title: 'eum et est occaecati',
-        body: 'ullam et saepe reiciendis voluptatem adipisci',
-    },
-    {
-        userId: 1,
-        id: 5,
-        title: 'nesciunt quas odio',
-        body: 'ullam et saepe reiciendis voluptatem adipisci',
-    },
-]
+import React, { useEffect, useState } from 'react'
+import { getUsers } from '../service/users'
 
 const Home = ({ navigation }) => {
-    return (
-        <View style={HomeStyle.container}>
-            <Text>Home</Text>
-            <Card title="Michael" image={picture1} />
-            <Card title="Julie" image={picture2} />
+    const [users, setUsers] = useState()
 
-            {users.map((user) => {
-                return <Card title={user.title} image={picture1} />
-            })}
-        </View>
+    useEffect(() => {
+        getUsers().then((response) => {
+            console.log(response)
+            setUsers(response)
+        })
+    }, [])
+
+    return (
+        <SafeAreaView style={HomeStyle.container}>
+            <Text>Home</Text>
+            <ScrollView style={HomeStyle.scrollView}>
+                <Card title="Michael" image={picture1} />
+                <Card title="Julie" image={picture2} />
+            </ScrollView>
+
+            {users &&
+                users.length > 0 &&
+                users.map((user) => {
+                    return (
+                        <Card
+                            title={user.name}
+                            image={picture1}
+                            key={user.id}
+                        />
+                    )
+                })}
+        </SafeAreaView>
     )
 }
 export default Home

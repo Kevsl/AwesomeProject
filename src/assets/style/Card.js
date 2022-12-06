@@ -10,8 +10,8 @@ export const CardStyle = (StyleSheet.createstyle = StyleSheet.create({
     },
 
     cardImage: {
-        width: 300,
-        height: 280,
+        width: '60%',
+        height: '30vh',
     },
     cardText: {
         textAlign: 'center',

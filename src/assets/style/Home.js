@@ -7,6 +7,14 @@ export const HomeStyle = (StyleSheet.createstyle = StyleSheet.create({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#14213D',
+        backgroundColor: '#e5e5e5',
+    },
+    scrollView: {
+        width: '70%',
+        height: '100vh',
+        display: 'flex',
+        flexWrap: 'wrap',
+        marginHorizontal: 'auto',
+        flexDirection: 'row',
     },
 }))
