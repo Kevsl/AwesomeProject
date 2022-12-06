@@ -10,11 +10,17 @@ export const HomeStyle = (StyleSheet.createstyle = StyleSheet.create({
         backgroundColor: '#e5e5e5',
     },
     scrollView: {
-        width: '70%',
-        height: '100vh',
+        width: '90%',
+        height: '90vh',
         display: 'flex',
         flexWrap: 'wrap',
         marginHorizontal: 'auto',
         flexDirection: 'row',
+        marginVertical: '5%',
+        borderRadius: 25,
+        justifyContent: 'space-around',
+    },
+    title: {
+        marginVertical: 30,
     },
 }))

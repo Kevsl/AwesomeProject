@@ -25,23 +25,25 @@ const Home = ({ navigation }) => {
 
     return (
         <SafeAreaView style={HomeStyle.container}>
-            <Text>Home</Text>
-            <ScrollView style={HomeStyle.scrollView}>
-                <Card title="Michael" image={picture1} />
-                <Card title="Julie" image={picture2} />
-            </ScrollView>
+            <Text style={HomeStyle.title}>Home</Text>
+            <ScrollView>
+                <View style={HomeStyle.scrollView}>
+                    <Card title="Michael" image={picture1} />
+                    <Card title="Julie" image={picture2} />
 
-            {users &&
-                users.length > 0 &&
-                users.map((user) => {
-                    return (
-                        <Card
-                            title={user.name}
-                            image={picture1}
-                            key={user.id}
-                        />
-                    )
-                })}
+                    {users &&
+                        users.length > 0 &&
+                        users.map((user) => {
+                            return (
+                                <Card
+                                    title={user.name}
+                                    image={picture1}
+                                    key={user.id}
+                                />
+                            )
+                        })}
+                </View>
+            </ScrollView>
         </SafeAreaView>
     )
 }
