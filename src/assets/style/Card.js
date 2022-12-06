@@ -7,11 +7,11 @@ export const CardStyle = (StyleSheet.createstyle = StyleSheet.create({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#14213D',
     },
 
     cardImage: {
-        width: '100%',
+        width: 300,
+        height: 280,
     },
     cardText: {
         textAlign: 'center',
