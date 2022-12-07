@@ -23,4 +23,25 @@ export const HomeStyle = (StyleSheet.createstyle = StyleSheet.create({
     title: {
         marginVertical: 30,
     },
+    inputSearch: {
+        width: '70%',
+        height: 50,
+        borderWidth: 2,
+        borderColor: '#14213D',
+        borderRadius: 9,
+        textIndent: 10,
+        borderBottomStartRadius: 0,
+        borderBottomEndRadius: 0,
+    },
+    inputContainer: {
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    searchButton: {
+        backgroundColor: '#e5e5e5',
+    },
+    loader: {
+        marginVertical: 40,
+    },
 }))

@@ -22,9 +22,16 @@ const Home = ({ navigation }) => {
         })
     }, [])
 
+    function navigateToMovies() {
+        navigation.navigate('Movies')
+    }
+
     return (
         <SafeAreaView style={HomeStyle.container}>
             <Text style={HomeStyle.title}>Home</Text>
+            <TouchableOpacity onPress={navigateToMovies}>
+                <Text>Go movies</Text>
+            </TouchableOpacity>
             <ScrollView>
                 <View style={HomeStyle.scrollView}>
                     <Card title="Michael" image={picture1} />

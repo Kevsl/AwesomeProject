@@ -21,7 +21,7 @@ const Login = ({ navigation }) => {
     useEffect(() => {
         const token = getData('isConnected').then((res) => {
             if (res && res === 'true') {
-                // navigation.navigate('Home')
+                navigation.navigate('Home')
             }
         })
     })
