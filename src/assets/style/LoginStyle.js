@@ -20,6 +20,8 @@ export const LoginStyle = (StyleSheet.createstyle = StyleSheet.create({
         justifyContent: 'center',
         flexDirection: 'column',
         marginVertical: 20,
+        width: '50%',
+        marginHorizontal: 'auto',
     },
     inputEmail: {
         width: 400,

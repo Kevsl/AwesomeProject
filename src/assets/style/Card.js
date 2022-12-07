@@ -12,11 +12,12 @@ export const CardStyle = (StyleSheet.createstyle = StyleSheet.create({
     cardImage: {
         width: '100%',
         height: '20vh',
-        borderRadius: 25,
+        borderTopEndRadius: 25,
+        borderTopStartRadius: 25,
     },
     cardText: {
         textAlign: 'center',
         color: '#fff',
-        marginVertical: 10,
+        marginVertical: 5,
     },
 }))
